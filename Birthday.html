@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>happy birthday 🎂</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#4695ED,#87AFC7);
+overflow:auto;
+}
+
+.page{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
+}
+
+.card{
+width:340px;
+padding:35px;
+background:rgba(255,255,255,.45);
+backdrop-filter:blur(10px);
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+h1{
+color:white;
+margin-bottom:15px;
+}
+
+p{
+line-height:1.8;
+color:white;
+}
+
+button{
+margin-top:20px;
+padding:12px 24px;
+border:none;
+border-radius:20px;
+background:#4169E1;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+}
+
+.heart{
+position:absolute;
+animation:float 6s linear infinite;
+color:#151854;
+}
+
+@keyframes float{
+from{
+transform:translateY(100vh);
+}
+to{
+transform:translateY(-100px);
+}
+}
+
+/* halaman 2 */
+
+#gallery{
+display:none;
+padding:40px 20px;
+}
+
+.memory{
+display:flex;
+align-items:center;
+gap:15px;
+margin:22px 0;
+}
+
+.memory:nth-child(even){
+flex-direction:row-reverse;
+}
+
+.memory img{
+width:160px;
+height:220px;
+object-fit:cover;
+border-radius:22px;
+
+transform:rotate(-4deg);
+
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.memory:nth-child(even) img{
+transform:rotate(4deg);
+}
+
+.note{
+max-width:140px;
+font-size:14px;
+line-height:1.8;
+color:white;
+text-align:left;
+}
+
+.endtext{
+margin-top:30px;
+color:white;
+line-height:1.9;
+}
+
+.music{
+position:fixed;
+top:15px;
+right:15px;
+background:white;
+padding:10px 15px;
+border-radius:20px;
+box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- lagu -->
+<audio id="music" autoplay loop>
+<source src="1782390280335.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music">
+<button onclick="toggleMusic()">🎵</button>
+</div>
+
+<div class="hearts">
+<span class="heart" style="left:10%">♡</span>
+<span class="heart" style="left:30%">♡</span>
+<span class="heart" style="left:60%">♡</span>
+<span class="heart" style="left:85%">♡</span>
+</div>
+
+<!-- halaman awal -->
+
+<div class="page" id="home">
+
+<div class="card">
+
+<h1>happy birthday ezzaaku🎂</h1>
+<p>
+<br>
+selamat bertambah usia ezzakuu
+semoga di usia ini banyak kebahagiaan yang mendatang
+panjang umur, sehat selalu, di bukakan
+pintu rezekinya selebar mungkin, jadi anak yang
+baik, ceria, dan penuh dengan kebahagiaan yaa🤍
+
+<br><br>
+
+maaf belum bisa ngasih apa apa  
+cuma doa terbaik dan cuma 
+hadiah ini yang bisa aku kasih:(
+
+</p>
+
+<button onclick="nextPage()">
+
+klik sini
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- halaman foto -->
+
+<div id="gallery">
+
+<h1 align="center">
+DIMAS FAHREZA🤍🤍
+</h1>
+
+<div class="memory">
+
+<img src="Ezza4.jpg">
+
+<div class="note">
+lagi belajar main ukul lele ya?
+kalo belajar hidup bersama aku kapan?
+PRANKK, tapi ga prank juga sih
+</div>
+
+</div>
+
+<div class="memory">
+
+<img src="Ezza3.jpg">
+
+<div class="note">
+foto senyuman yang paling manis
+aura cerianya kuat buangettt lucuu lagii
+semoga senyuman itu selalu melekat di dirii
+kamu yaa ezzaa
+</div>
+
+</div>
+
+<div class="memory">
+
+<img src="Ezza2.jpg">
+
+<div class="note">
+ini ga kalah lucuu dengan senyuman yang maniss
+dagu belah dua yang menarikkkk, SUUKKAAAAA
+</div>
+
+</div>
+
+<div class="memory">
+
+<img src="Ezza1.jpg">
+
+<div class="note">
+nah poto ini vibesnya kaya dewasa buangettt
+tapi liat matanya sepertii capeee buangettt
+tapi jugaa ga kalahh gantenggg + rapihhh SUKAAA BANGETTTTT
+</div>
+
+</div>
+
+<div class="endtext">
+
+makasih ya udah bertahan sejauh iniii  
+semoga semua yang lagi diusahain pelan pelan tercapai  
+dan semoga di umur baru ini lebih banyak senyum daripada capenya 🤍
+I LOVE YOU LAKI LAKI KESAYANGANKUU🤍🤍
+
+</div>
+
+</div>
+
+<script>
+
+function nextPage(){
+document.getElementById("home").style.display="none";
+document.getElementById("gallery").style.display="block";
+
+document.getElementById("music").play();
+}
+
+function toggleMusic(){
+
+let m=document.getElementById("music");
+
+if(m.paused){
+m.play();
+}
+else{
+m.pause();
+}
+
+}
+
+</script>
+
+</body>
+</html>
